@@ -137,30 +137,79 @@ function Drives() {
 }
 
 const features = [
-  { icon: MapPin, title: "Location-Based Drive Feed", desc: "Get personalized drive recommendations based on your current location and preferences." },
-  { icon: Calendar, title: "Daily Walk-In Calendar", desc: "Never miss an opportunity with our comprehensive calendar of daily walk-in events." },
-  { icon: FileCheck, title: "Document Checklist", desc: "Know exactly what to carry — resume, ID, certificates, photos — for every drive." },
-  { icon: Navigation, title: "Map-Based Directions", desc: "Get turn-by-turn directions to interview venues with accurate timing estimates." },
-  { icon: Bell, title: "Instant Drive Alerts", desc: "Receive real-time notifications when new walk-in opportunities match your criteria." },
-  { icon: ShieldCheck, title: "Verified Company Posts", desc: "All drive postings are verified to ensure authentic opportunities and prevent fraud." },
+  { icon: MapPin, title: "Location-Based Drive Feed", desc: "Get personalized drive recommendations based on your current location and preferences.", accent: "from-blue-500/15 to-blue-500/0" },
+  { icon: Calendar, title: "Daily Walk-In Calendar", desc: "Never miss an opportunity with our comprehensive calendar of daily walk-in events.", accent: "from-amber-400/20 to-amber-400/0" },
+  { icon: FileCheck, title: "Document Checklist", desc: "Know exactly what to carry — resume, ID, certificates, photos — for every drive.", accent: "from-emerald-500/15 to-emerald-500/0" },
+  { icon: Navigation, title: "Map-Based Directions", desc: "Get turn-by-turn directions to interview venues with accurate timing estimates.", accent: "from-violet-500/15 to-violet-500/0" },
+  { icon: Bell, title: "Instant Drive Alerts", desc: "Receive real-time notifications when new walk-in opportunities match your criteria.", accent: "from-rose-500/15 to-rose-500/0" },
+  { icon: ShieldCheck, title: "Verified Company Posts", desc: "All drive postings are verified to ensure authentic opportunities and prevent fraud.", accent: "from-cyan-500/15 to-cyan-500/0" },
+];
+
+const whyStats = [
+  { value: "14+", label: "Active drives" },
+  { value: "120K", label: "Job seekers" },
+  { value: "850+", label: "Hiring partners" },
+  { value: "4.8★", label: "Candidate rating" },
 ];
 
 function Why() {
   return (
-    <section className="bg-section-soft border-y border-border/60">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Why Choose WALKINS?</h2>
-          <p className="mt-3 text-muted-foreground">Everything you need to land your next job, faster than ever before.</p>
+    <section className="relative bg-section-soft border-y border-border/60 overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "radial-gradient(oklch(0.62_0.22_260/0.18) 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+          maskImage:
+            "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1 text-xs font-semibold tracking-wide text-brand-blue">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+            WHY WALKINS
+          </span>
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
+            Built for the way India <span className="text-brand-blue">actually hires.</span>
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            Everything you need to land your next job, faster than ever before — verified drives, real-time alerts and end-to-end prep tools in one place.
+          </p>
         </div>
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="rounded-2xl border border-border bg-card p-6 hover:shadow-sm transition">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary text-brand-blue">
-                <f.icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 text-base font-semibold text-foreground">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {features.map((f, i) => (
+            <div
+              key={f.title}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_oklch(0.62_0.22_260/0.35)] hover:border-brand-blue/40"
+            >
+              <div className={`pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br ${f.accent} blur-2xl opacity-80 group-hover:opacity-100 transition-opacity`} />
+              <div className="relative flex items-start justify-between">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-blue to-[oklch(0.55_0.22_260)] text-primary-foreground shadow-[0_8px_20px_-8px_oklch(0.62_0.22_260/0.6)] ring-1 ring-white/20">
+                  <f.icon className="h-5 w-5" />
+                </span>
+                <span className="text-xs font-mono text-muted-foreground/60">0{i + 1}</span>
+              </div>
+              <h3 className="relative mt-5 text-lg font-semibold text-foreground">{f.title}</h3>
+              <p className="relative mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+              <div className="relative mt-5 flex items-center gap-1.5 text-xs font-semibold text-brand-blue opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                Learn more <ArrowRight className="h-3.5 w-3.5" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 rounded-2xl border border-border bg-card overflow-hidden">
+          {whyStats.map((s, i) => (
+            <div
+              key={s.label}
+              className={`px-6 py-6 text-center ${i > 0 ? "border-l border-border/60" : ""} ${i >= 2 ? "sm:border-l border-l border-t sm:border-t-0 border-border/60" : ""}`}
+            >
+              <p className="text-3xl font-bold text-foreground tracking-tight">{s.value}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">{s.label}</p>
             </div>
           ))}
         </div>
