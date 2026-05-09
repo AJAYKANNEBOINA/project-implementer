@@ -52,7 +52,7 @@ function Hero() {
             A curated directory of walk-in interviews from India's most trusted IT, banking and BPM companies — discover, filter and apply in real-time.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition">
+            <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
               Find a drive <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="#partners" className="inline-flex items-center rounded-full border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition">
@@ -123,7 +123,7 @@ function Drives() {
         {drives.slice(0, 6).map((d) => <DriveCard key={d.id} drive={d} />)}
       </div>
       <div className="mt-10 flex justify-center">
-        <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition">
+        <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
           View all walk-in drives <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
