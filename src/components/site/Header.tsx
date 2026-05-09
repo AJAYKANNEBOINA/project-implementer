@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Building2, Bell, ExternalLink } from "lucide-react";
+import { Briefcase, BellRing, Globe2, ExternalLink } from "lucide-react";
 import logo from "@/assets/walkins-logo.png";
 
 export function Logo() {
@@ -18,15 +18,24 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-muted-foreground">
-          <Link to="/drives" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-            <Building2 className="h-4 w-4" /> Walk-in Drives
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+          <Link to="/drives" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-blue-500/10 text-brand-blue ring-1 ring-blue-500/20 group-hover:bg-blue-500/15 transition">
+              <Briefcase className="h-3.5 w-3.5" fill="currentColor" strokeWidth={1.5} />
+            </span>
+            Walk-in Drives
           </Link>
-          <a href="#alerts" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-            <Bell className="h-4 w-4" /> Job Alerts
+          <a href="#alerts" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-amber-400/15 text-amber-600 ring-1 ring-amber-400/30 group-hover:bg-amber-400/25 transition">
+              <BellRing className="h-3.5 w-3.5" fill="currentColor" strokeWidth={1.5} />
+            </span>
+            Job Alerts
           </a>
-          <Link to="/blogs" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-            <BookOpen className="h-4 w-4" /> Blogs
+          <Link to="/blogs" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-emerald-500/10 text-emerald-600 ring-1 ring-emerald-500/20 group-hover:bg-emerald-500/15 transition">
+              <Globe2 className="h-3.5 w-3.5" strokeWidth={2} />
+            </span>
+            Blogs
           </Link>
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
