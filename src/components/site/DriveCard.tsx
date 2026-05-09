@@ -11,7 +11,7 @@ export function DriveCard({ drive }: { drive: Drive }) {
     <div className="rounded-2xl border border-border bg-card p-6 hover:border-brand-blue/40 hover:shadow-md transition">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <h3 className="text-xl font-bold text-brand-blue leading-tight">{drive.role}</h3>
+          <h3 className="text-xl font-bold text-foreground leading-tight">{drive.role}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{drive.company}</p>
         </div>
         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-border bg-card overflow-hidden">
