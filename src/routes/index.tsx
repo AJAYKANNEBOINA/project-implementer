@@ -28,6 +28,7 @@ function Index() {
         <Partners />
         <Drives />
         <Why />
+        <Blogs />
         <Employers />
       </main>
       <Footer />
