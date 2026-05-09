@@ -4,7 +4,8 @@ import heroOffice from "@/assets/hero-office.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { DriveCard } from "@/components/site/DriveCard";
-import { drives, partners } from "@/lib/drives";
+import { drives } from "@/lib/drives";
+import { partnerLogos } from "@/lib/logos";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,10 +95,10 @@ function Partners() {
             Every brand mark below is fetched on the fly from Google's brand index — no manual uploads, always up to date.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-          {partners.map((p) => (
-            <div key={p} className="aspect-[3/2] grid place-items-center rounded-2xl border border-border bg-card p-4 hover:shadow-sm transition">
-              <span className="text-xs font-semibold text-foreground/70 text-center">{p}</span>
+        <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3">
+          {partnerLogos.map((p) => (
+            <div key={p.name} className="aspect-[3/2] grid place-items-center rounded-2xl border border-border bg-card p-5 hover:shadow-sm transition">
+              <img src={p.src} alt={`${p.name} logo`} loading="lazy" className="max-h-12 max-w-[70%] object-contain" />
             </div>
           ))}
         </div>
