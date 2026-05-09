@@ -8,7 +8,7 @@ export function Logo() {
       <span className="grid h-9 w-9 place-items-center rounded-lg bg-white border border-border overflow-hidden">
         <img src={logo} alt="Walkins logo" className="h-full w-full object-cover" />
       </span>
-      <span className="text-lg font-bold text-brand-blue tracking-tight">Walkins</span>
+      <span className="text-lg font-bold text-foreground tracking-tight">Walkins</span>
     </Link>
   );
 }
