@@ -19,30 +19,23 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-foreground/80">
-          <Link to="/drives" className="group relative flex items-center gap-2 hover:text-foreground transition-colors">
-            <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-[oklch(0.72_0.18_258)] to-[oklch(0.5_0.22_265)] text-white shadow-[0_6px_14px_-6px_oklch(0.5_0.22_265/0.6),inset_0_1px_0_oklch(1_0_0/0.35)] ring-1 ring-white/20 group-hover:-translate-y-0.5 transition-transform">
-              <Briefcase className="h-4 w-4" strokeWidth={2.25} />
-              <span className="pointer-events-none absolute inset-x-1.5 top-0.5 h-1/3 rounded-t-xl bg-gradient-to-b from-white/40 to-transparent" />
+          <Link to="/drives" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-8 w-8 place-items-center rounded-lg border border-foreground/80 text-foreground transition group-hover:bg-foreground group-hover:text-background">
+              <Briefcase className="h-4 w-4" strokeWidth={2} />
             </span>
             Walk-in Drives
-            <span className="absolute -bottom-1 left-10 right-0 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-brand-blue to-transparent transition-transform group-hover:scale-x-100" />
           </Link>
-          <a href="#alerts" className="group relative flex items-center gap-2 hover:text-foreground transition-colors">
-            <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-amber-300 to-orange-500 text-white shadow-[0_6px_14px_-6px_oklch(0.7_0.18_60/0.65),inset_0_1px_0_oklch(1_0_0/0.4)] ring-1 ring-white/25 group-hover:-translate-y-0.5 transition-transform">
-              <BellRing className="h-4 w-4" strokeWidth={2.25} />
-              <span className="pointer-events-none absolute inset-x-1.5 top-0.5 h-1/3 rounded-t-xl bg-gradient-to-b from-white/45 to-transparent" />
-              <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-background" />
+          <a href="#alerts" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-8 w-8 place-items-center rounded-lg border border-foreground/80 text-foreground transition group-hover:bg-foreground group-hover:text-background">
+              <BellRing className="h-4 w-4" strokeWidth={2} />
             </span>
             Job Alerts
-            <span className="absolute -bottom-1 left-10 right-0 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-amber-500 to-transparent transition-transform group-hover:scale-x-100" />
           </a>
-          <Link to="/blogs" className="group relative flex items-center gap-2 hover:text-foreground transition-colors">
-            <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-white shadow-[0_6px_14px_-6px_oklch(0.65_0.16_165/0.6),inset_0_1px_0_oklch(1_0_0/0.4)] ring-1 ring-white/25 group-hover:-translate-y-0.5 transition-transform">
-              <Globe2 className="h-4 w-4" strokeWidth={2.25} />
-              <span className="pointer-events-none absolute inset-x-1.5 top-0.5 h-1/3 rounded-t-xl bg-gradient-to-b from-white/45 to-transparent" />
+          <Link to="/blogs" className="group flex items-center gap-2 hover:text-foreground transition-colors">
+            <span className="grid h-8 w-8 place-items-center rounded-lg border border-foreground/80 text-foreground transition group-hover:bg-foreground group-hover:text-background">
+              <Globe2 className="h-4 w-4" strokeWidth={2} />
             </span>
             Blogs
-            <span className="absolute -bottom-1 left-10 right-0 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-emerald-500 to-transparent transition-transform group-hover:scale-x-100" />
           </Link>
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
