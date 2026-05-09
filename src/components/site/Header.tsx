@@ -25,7 +25,7 @@ export function Header() {
           <a href="#alerts" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <Bell className="h-4 w-4" /> Job Alerts
           </a>
-          <Link to="/" hash="blogs" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+          <Link to="/blogs" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <BookOpen className="h-4 w-4" /> Blogs
           </Link>
         </nav>
