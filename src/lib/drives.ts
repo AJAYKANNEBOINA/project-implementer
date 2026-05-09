@@ -9,6 +9,9 @@ export type Drive = {
   time: string;
   location: string;
   eligibility: string;
+  salary?: string;
+  mode?: "Hybrid" | "Onsite" | "Remote";
+  postedDaysAgo?: number;
 };
 
 export const drives: Drive[] = [
