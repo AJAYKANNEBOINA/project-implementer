@@ -25,9 +25,9 @@ export function Header() {
           <a href="#alerts" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <Bell className="h-4 w-4" /> Job Alerts
           </a>
-          <a href="#blogs" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+          <Link to="/" hash="blogs" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <BookOpen className="h-4 w-4" /> Blogs
-          </a>
+          </Link>
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
           <button className="hidden sm:inline-flex items-center rounded-full bg-brand-yellow px-4 py-2 text-sm font-semibold text-brand-yellow-foreground shadow-sm hover:brightness-95 transition">
