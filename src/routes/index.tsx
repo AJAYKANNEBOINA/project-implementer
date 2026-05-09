@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, ArrowRight, MapPin, Calendar, FileCheck, Navigation, Bell, ShieldCheck, Clock3, Users, Zap, BookOpen, ExternalLink } from "lucide-react";
+import { CheckCircle2, ArrowRight, MapPin, Calendar, FileCheck, Navigation, Bell, ShieldCheck, Clock3, Users, Zap } from "lucide-react";
 import heroOffice from "@/assets/hero-office.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
