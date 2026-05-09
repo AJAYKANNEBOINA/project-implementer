@@ -220,40 +220,83 @@ function Why() {
 
 
 const empFeatures = [
-  { icon: Clock3, title: "Post in Minutes", desc: "Quick & easy job posting" },
-  { icon: MapPin, title: "Local Reach", desc: "Target candidates nearby" },
-  { icon: Users, title: "Quality Candidates", desc: "Verified job seekers" },
-  { icon: Zap, title: "Instant Visibility", desc: "Go live immediately" },
+  { icon: Clock3, title: "Post in Minutes", desc: "Quick & easy job posting", accent: "from-amber-400/25 to-amber-400/0" },
+  { icon: MapPin, title: "Local Reach", desc: "Target candidates nearby", accent: "from-blue-500/20 to-blue-500/0" },
+  { icon: Users, title: "Quality Candidates", desc: "Verified job seekers", accent: "from-emerald-500/20 to-emerald-500/0" },
+  { icon: Zap, title: "Instant Visibility", desc: "Go live immediately", accent: "from-violet-500/20 to-violet-500/0" },
+];
+
+const empStats = [
+  { value: "48 hrs", label: "Avg. time to hire" },
+  { value: "95%", label: "Verified applicants" },
+  { value: "0", label: "Posting fees" },
 ];
 
 function Employers() {
   return (
-    <section id="recruiters" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div className="rounded-3xl border border-border bg-card p-10 sm:p-14">
-        <div className="text-center">
-          <p className="text-xs font-semibold tracking-widest text-brand-blue">FOR EMPLOYERS</p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">
-            Need to Hire <span className="text-brand-blue">Fast?</span>
+    <section id="recruiters" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative overflow-hidden rounded-[2rem] border border-border bg-gradient-to-br from-[oklch(0.18_0.04_260)] via-[oklch(0.22_0.06_260)] to-[oklch(0.16_0.04_260)] p-10 sm:p-16 shadow-[0_30px_80px_-30px_oklch(0.62_0.22_260/0.5)]">
+        {/* Decorative orbs */}
+        <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-blue/30 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-brand-yellow/20 blur-3xl" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage:
+              "linear-gradient(oklch(1_0_0/0.5) 1px, transparent 1px), linear-gradient(90deg, oklch(1_0_0/0.5) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+            maskImage:
+              "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          }}
+        />
+
+        <div className="relative text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 backdrop-blur px-3 py-1 text-xs font-semibold tracking-wide text-brand-yellow">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
+            FOR EMPLOYERS
+          </span>
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            Need to Hire{" "}
+            <span className="bg-gradient-to-r from-brand-yellow to-amber-300 bg-clip-text text-transparent">
+              Fast?
+            </span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-4 text-base text-white/70 max-w-xl mx-auto">
             Post your walk-in drive and reach local candidates instantly. No waiting, no delays — find the right talent today.
           </p>
         </div>
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div className="relative mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {empFeatures.map((f) => (
-            <div key={f.title} className="rounded-2xl border border-border p-5 text-center">
-              <span className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-secondary text-brand-blue">
+            <div
+              key={f.title}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:border-white/20"
+            >
+              <div className={`pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 h-32 w-32 rounded-full bg-gradient-to-br ${f.accent} blur-2xl opacity-80`} />
+              <span className="relative mx-auto grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-blue to-[oklch(0.55_0.22_260)] text-primary-foreground shadow-[0_8px_20px_-8px_oklch(0.62_0.22_260/0.7)] ring-1 ring-white/20">
                 <f.icon className="h-5 w-5" />
               </span>
-              <h3 className="mt-3 text-sm font-semibold text-foreground">{f.title}</h3>
-              <p className="mt-1 text-xs text-muted-foreground">{f.desc}</p>
+              <h3 className="relative mt-4 text-base font-semibold text-white">{f.title}</h3>
+              <p className="relative mt-1 text-xs text-white/60">{f.desc}</p>
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <button className="inline-flex items-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
+
+        <div className="relative mt-12 flex flex-col items-center gap-6">
+          <button className="group relative inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-brand-yellow-foreground bg-gradient-to-b from-brand-yellow to-amber-400 shadow-[0_18px_40px_-12px_oklch(0.85_0.18_85/0.6),inset_0_1px_0_oklch(1_0_0/0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
             Post a Walk-In Drive — It's Free
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </button>
+          <div className="grid grid-cols-3 gap-8 sm:gap-12 pt-2">
+            {empStats.map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">{s.value}</p>
+                <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-white/50">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
