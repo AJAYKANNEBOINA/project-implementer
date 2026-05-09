@@ -95,12 +95,14 @@ function Partners() {
             Every brand mark below is fetched on the fly from Google's brand index — no manual uploads, always up to date.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3">
-          {partnerLogos.map((p) => (
-            <div key={p.name} className="aspect-[3/2] grid place-items-center rounded-2xl border border-border bg-card p-5 hover:shadow-sm transition">
-              <img src={p.src} alt={`${p.name} logo`} loading="lazy" className="max-h-12 max-w-[70%] object-contain" />
-            </div>
-          ))}
+        <div className="mt-10 marquee-mask overflow-hidden">
+          <div className="flex w-max animate-marquee gap-4 hover:[animation-play-state:paused]">
+            {[...partnerLogos, ...partnerLogos].map((p, i) => (
+              <div key={`${p.name}-${i}`} className="shrink-0 w-44 h-24 grid place-items-center rounded-2xl border border-border bg-card p-5 hover:shadow-sm transition">
+                <img src={p.src} alt={`${p.name} logo`} loading="lazy" className="max-h-12 max-w-[70%] object-contain" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
