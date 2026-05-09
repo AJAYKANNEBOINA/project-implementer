@@ -1,6 +1,8 @@
-import { MapPin, CalendarBlank, Clock } from "@phosphor-icons/react";
 import type { Drive } from "@/lib/drives";
 import { logoMap } from "@/lib/logos";
+import clockIcon from "@/assets/icons/clock.png";
+import calendarIcon from "@/assets/icons/calendar.png";
+import locationIcon from "@/assets/icons/location.png";
 
 export function DriveCard({ drive }: { drive: Drive }) {
   const logo = logoMap[drive.company];
@@ -24,7 +26,7 @@ export function DriveCard({ drive }: { drive: Drive }) {
       </div>
 
       <div className="mt-4 flex items-center gap-1.5 text-sm text-foreground">
-        <MapPin weight="regular" className="h-4 w-4 text-muted-foreground" />
+        <img src={locationIcon} alt="" aria-hidden className="h-4 w-4 object-contain" />
         {drive.location}
       </div>
 
@@ -44,11 +46,11 @@ export function DriveCard({ drive }: { drive: Drive }) {
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
         <span className="inline-flex items-center gap-1.5">
-          <CalendarBlank weight="duotone" className="h-3.5 w-3.5 text-brand-blue" />
+          <img src={calendarIcon} alt="" aria-hidden className="h-4 w-4 object-contain" />
           {drive.date}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <Clock weight="duotone" className="h-3.5 w-3.5 text-brand-blue" />
+          <img src={clockIcon} alt="" aria-hidden className="h-4 w-4 object-contain" />
           {drive.time}
         </span>
       </div>
