@@ -10,19 +10,17 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-background border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
-            <div className="[&_a]:text-primary-foreground [&_span:last-child]:text-primary-foreground">
-              <Logo />
-            </div>
-            <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
+            <Logo />
+            <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               India's largest walk-in drives platform connecting candidates with hiring companies in real-time.
             </p>
-            <div className="mt-5 flex gap-3 text-primary-foreground/70">
+            <div className="mt-5 flex gap-3">
               {[Facebook, Twitter, Linkedin, Instagram, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="grid h-8 w-8 place-items-center rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/10 transition">
+                <a key={i} href="#" className="grid h-8 w-8 place-items-center rounded-full border border-border text-muted-foreground hover:text-brand-blue hover:border-brand-blue/40 transition">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
@@ -30,16 +28,16 @@ export function Footer() {
           </div>
           {cols.map((c) => (
             <div key={c.title}>
-              <h4 className="text-sm font-semibold mb-4">{c.title}</h4>
-              <ul className="space-y-3 text-sm text-primary-foreground/70">
+              <h4 className="text-sm font-semibold text-foreground mb-4">{c.title}</h4>
+              <ul className="space-y-3 text-sm text-muted-foreground">
                 {c.links.map((l) => (
-                  <li key={l}><a href="#" className="hover:text-primary-foreground transition">{l}</a></li>
+                  <li key={l}><a href="#" className="hover:text-brand-blue transition">{l}</a></li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-primary-foreground/10 pt-6 text-xs text-primary-foreground/60">
+        <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground">
           <p>© 2026 Walkins.com — All rights reserved.</p>
           <p>Made with care for India's hiring community</p>
         </div>
