@@ -37,48 +37,32 @@ function Index() {
 
 function Hero() {
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-20">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
-            14 active walk-in drives this month
+    <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-12 pb-20">
+      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+        <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+        14 active walk-in drives this month
+      </span>
+      <h1 className="mt-5 text-5xl sm:text-7xl font-bold tracking-tight text-foreground leading-[1.05]">
+        Walk in. <br />
+        Walk out <span className="text-brand-blue">hired.</span>
+      </h1>
+      <p className="mt-5 text-base text-muted-foreground max-w-2xl">
+        A curated directory of walk-in interviews from India's most trusted IT, banking and BPM companies — discover, filter and apply in real-time.
+      </p>
+      <div className="mt-7 flex flex-wrap gap-3">
+        <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
+          Find a drive <ArrowRight className="h-4 w-4" />
+        </Link>
+        <a href="#partners" className="inline-flex items-center rounded-full border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition">
+          Our partners
+        </a>
+      </div>
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        {["Verified employers", "Updated daily", "100% free"].map((t) => (
+          <span key={t} className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-brand-blue" /> {t}
           </span>
-          <h1 className="mt-5 text-5xl sm:text-6xl font-bold tracking-tight text-foreground leading-[1.05]">
-            Walk in. <br />
-            Walk out <span className="text-brand-blue">hired.</span>
-          </h1>
-          <p className="mt-5 text-base text-muted-foreground max-w-lg">
-            A curated directory of walk-in interviews from India's most trusted IT, banking and BPM companies — discover, filter and apply in real-time.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
-              Find a drive <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a href="#partners" className="inline-flex items-center rounded-full border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition">
-              Our partners
-            </a>
-          </div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            {["Verified employers", "Updated daily", "100% free"].map((t) => (
-              <span key={t} className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-brand-blue" /> {t}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative">
-          <div className="overflow-hidden rounded-3xl border border-border shadow-lg">
-            <img src={heroOffice} alt="Modern office lobby" width={1280} height={832} className="w-full h-auto" />
-          </div>
-          <div className="absolute -bottom-5 left-5 sm:left-8 rounded-2xl bg-card border border-border shadow-md px-4 py-3 flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground font-bold text-sm">14</span>
-            <div>
-              <p className="text-sm font-semibold text-foreground">Top hiring partners</p>
-              <p className="text-xs text-muted-foreground">Featured this fortnight</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
