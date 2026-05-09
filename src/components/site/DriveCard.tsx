@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
+import { CalendarBlank, Clock, MapPin, GraduationCap, ArrowUpRight } from "@phosphor-icons/react";
 import type { Drive } from "@/lib/drives";
 import { logoMap } from "@/lib/logos";
 
@@ -26,17 +26,28 @@ export function DriveCard({ drive }: { drive: Drive }) {
             )}
           </div>
           <h3 className="mt-1.5 text-base font-semibold text-foreground leading-snug">{drive.role}</h3>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{drive.date}</span>
-            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{drive.time}</span>
-            <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{drive.location}</span>
-            <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5" />{drive.eligibility}</span>
+          <div className="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-xs text-muted-foreground">
+            <Meta icon={<CalendarBlank weight="duotone" className="h-3.5 w-3.5" />} label={drive.date} />
+            <Meta icon={<Clock weight="duotone" className="h-3.5 w-3.5" />} label={drive.time} />
+            <Meta icon={<MapPin weight="duotone" className="h-3.5 w-3.5" />} label={drive.location} />
+            <Meta icon={<GraduationCap weight="duotone" className="h-3.5 w-3.5" />} label={drive.eligibility} />
           </div>
         </div>
-        <button className="hidden sm:inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition">
-          View details <ArrowUpRight className="h-3.5 w-3.5" />
+        <button className="hidden sm:inline-flex shrink-0 items-center gap-1 rounded-full bg-brand-blue px-4 py-2 text-xs font-semibold text-primary-foreground hover:brightness-110 transition">
+          View details <ArrowUpRight weight="bold" className="h-3.5 w-3.5" />
         </button>
       </div>
     </div>
+  );
+}
+
+function Meta({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className="grid h-6 w-6 place-items-center rounded-md bg-secondary text-brand-blue">
+        {icon}
+      </span>
+      {label}
+    </span>
   );
 }
