@@ -85,7 +85,7 @@
   --brand-blue: oklch(0.62 0.22 260);
   --brand-yellow: oklch(0.84 0.17 85);
   --brand-yellow-foreground: oklch(0.25 0.06 60);
-  --section-soft: oklch(0.975 0.012 250);
+  --section-soft: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
