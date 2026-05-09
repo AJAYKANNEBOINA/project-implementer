@@ -5,7 +5,7 @@ import logo from "@/assets/walkins-logo.jpeg";
 export function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2">
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-black overflow-hidden">
+      <span className="grid h-9 w-9 place-items-center rounded-lg bg-white border border-border overflow-hidden">
         <img src={logo} alt="Walkins logo" className="h-full w-full object-cover" />
       </span>
       <span className="text-lg font-bold text-brand-blue tracking-tight">Walkins</span>
