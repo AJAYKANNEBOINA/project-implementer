@@ -122,9 +122,14 @@ function Drives() {
       <div className="mt-8 grid md:grid-cols-2 gap-4">
         {drives.slice(0, 6).map((d) => <DriveCard key={d.id} drive={d} />)}
       </div>
-      <div className="mt-10 flex justify-center">
-        <Link to="/drives" className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition">
-          View all walk-in drives <ArrowRight className="h-4 w-4" />
+      <div className="mt-12 flex justify-center">
+        <Link
+          to="/drives"
+          className="group relative inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-primary-foreground bg-gradient-to-b from-[oklch(0.68_0.2_258)] to-brand-blue shadow-[0_10px_30px_-10px_oklch(0.62_0.22_260/0.6),inset_0_1px_0_oklch(1_0_0/0.35)] ring-1 ring-brand-blue/40 hover:shadow-[0_18px_40px_-12px_oklch(0.62_0.22_260/0.7),inset_0_1px_0_oklch(1_0_0/0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+        >
+          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+          View all walk-in drives
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Link>
       </div>
     </section>
