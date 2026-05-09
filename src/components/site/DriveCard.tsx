@@ -1,12 +1,18 @@
 import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
 import type { Drive } from "@/lib/drives";
+import { logoMap } from "@/lib/logos";
 
 export function DriveCard({ drive }: { drive: Drive }) {
+  const logo = logoMap[drive.company];
   return (
     <div className="group rounded-2xl border border-border/70 bg-card p-5 hover:border-brand-blue/40 hover:shadow-md transition">
       <div className="flex items-start gap-4">
-        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-secondary text-primary font-bold">
-          {drive.logoSeed}
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-card border border-border overflow-hidden">
+          {logo ? (
+            <img src={logo} alt={`${drive.company} logo`} className="h-9 w-9 object-contain" loading="lazy" />
+          ) : (
+            <span className="text-primary font-bold">{drive.logoSeed}</span>
+          )}
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
