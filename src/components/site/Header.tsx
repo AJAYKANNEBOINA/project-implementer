@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen, Building2, Bell, ExternalLink } from "lucide-react";
+import logo from "@/assets/walkins-logo.jpeg";
 
 export function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-        W
+      <span className="grid h-9 w-9 place-items-center rounded-lg bg-black overflow-hidden">
+        <img src={logo} alt="Walkins logo" className="h-full w-full object-cover" />
       </span>
       <span className="text-lg font-bold text-brand-blue tracking-tight">Walkins</span>
     </Link>
